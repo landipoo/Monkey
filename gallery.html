@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="scripts/style.css">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>Monkey Gallery</title>
+    <style>
+        /* Simple grid layout for gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+        }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+            .lightbox img {
+                max-width: 90%;
+                max-height: 90%;
+            }
+
+            .lightbox:target {
+                display: flex;
+            }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="#">Subpages</a>
+                    <ul class="dropdown">
+                        <li><a href="Facts.html">FUN FACTS</a></li>
+                        <li><a href="Ufacts.html">Unique Traits</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Facts.html">FUN FACTS</a></li>
+                <li><a href="Ufacts.html">Unique Traits</a></li>
+            </ul>
+        </nav>
+        <a href="index.html"><img src="images/Logo.png" width="224" height="105" alt=""></a>
+    </header>
+
+    <main>
+        <h1>Monkey Gallery</h1>
+        <p>Enjoy these beautiful pictures of monkeys from around the world!</p>
+
+        <!-- Gallery Grid -->
+        <div class="gallery">
+            <a href="#lightbox1">
+                <img src="images/monkey1.jpg" width="900" height="900" alt="Monkey 1">
+            </a>
+            <a href="#lightbox2">
+                <img src="images/monkey2.jpg"  width="900" height="900" alt="Monkey 2">
+            </a>
+            <a href="#lightbox3">
+                <img src="images/monkey3.jpg"  width="900" height="900" alt="Monkey 3">
+            </a>
+            <a href="#lightbox4">
+                <img src="images/monkey4.jpg"  width="900" height="900" alt="Monkey 4">
+            </a>
+            <a href="#lightbox5">
+                <img src="images/monkey5.jpg"  width="900" height="900" alt="Monkey 5">
+            </a>
+            <a href="#lightbox6">
+                <img src="images/monkey6.jpg"  width="900" height="900" alt="Monkey 6">
+            </a>
+        </div>
+
+        <!-- Lightbox for images -->
+        <div id="lightbox1" class="lightbox">
+            <img src="images/monkey1.jpg" alt="Monkey 1">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+        <div id="lightbox2" class="lightbox">
+            <img src="images/monkey2.jpg" alt="Monkey 2">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+        <div id="lightbox3" class="lightbox">
+            <img src="images/monkey3.jpg" alt="Monkey 3">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+        <div id="lightbox4" class="lightbox">
+            <img src="images/monkey4.jpg" alt="Monkey 4">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+        <div id="lightbox5" class="lightbox">
+            <img src="images/monkey5.jpg" alt="Monkey 5">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+        <div id="lightbox6" class="lightbox">
+            <img src="images/monkey6.jpg" alt="Monkey 6">
+            <button class="close" onclick="window.location.href='gallery.html'">X</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Monkey World All rights reserved.</p>
+    </footer>
+</body>
+</html>
